@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Workouts | Welnezia</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welnezia | Workouts</title>
+  <meta name="description" content="Welnezia – Workout plans and exercise guides for all fitness levels.">
+  <meta name="keywords" content="workout, exercise, fitness, HIIT, strength, flexibility">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nova+Round&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header>
-    <a class="logo" href="index.html">Welnezia</a>
+    <a href="index.html" class="logo">Welnezia</a>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="workouts.html" class="active">Workouts</a></li>
-        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="nutrition.html" class="active">Nutrition</a></li>
         <li><a href="mental.html">Wellness</a></li>
         <li><a href="blogs.html">Tips</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -27,7 +32,7 @@
     </div>
   </header>
 
-  <nav id="mobile-menu">
+  <div id="mobile-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="workouts.html" class="active">Workouts</a>
@@ -35,16 +40,14 @@
     <a href="mental.html">Wellness</a>
     <a href="blogs.html">Tips</a>
     <a href="contact.html">Contact</a>
-  </nav>
+  </div>
 
   <main>
 
-    <section class="hero">
-      <h1>&#128170; Workout Plans</h1>
-      <p>Choose a plan that matches your goal. Consistency is the real secret to lasting results.</p>
-    </section>
+    <h1>&#128170; Workout Plans</h1>
+    <p style="color:var(--text-muted); margin-bottom:2rem;">Choose a plan that matches your goal. Consistency is the real secret to lasting results.</p>
 
-    <section>
+    <section style="margin-bottom:2rem;">
       <h2>Workout Categories</h2>
       <div class="grid-container">
         <div class="card">
@@ -68,7 +71,7 @@
       </div>
     </section>
 
-    <section>
+    <section style="margin-bottom:2rem;">
       <h2>Exercises</h2>
       <div class="grid-container">
 
@@ -165,16 +168,16 @@
       </div>
     </section>
 
-    <section>
+    <section style="margin:3rem 0 1rem;">
       <h2>Exercise Reference Table</h2>
       <table>
         <caption>Full Exercise Breakdown</caption>
         <thead>
           <tr>
-            <th>Exercise</th>
-            <th>Duration / Reps</th>
-            <th>Category</th>
-            <th>Goal</th>
+            <th scope="col">Exercise</th>
+            <th scope="col">Duration / Reps</th>
+            <th scope="col">Category</th>
+            <th scope="col">Goal</th>
           </tr>
         </thead>
         <tbody>
@@ -198,9 +201,9 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Welnezia &mdash; Built for a healthier you.</p>
+    <p>&copy; 2026 <strong>Welnezia</strong> &mdash; Amrita School of Computing, S2 B.Tech CSE-AI</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
