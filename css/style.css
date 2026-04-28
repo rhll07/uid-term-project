@@ -141,6 +141,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 36px;    /* ← ADDED */
+  height: 36px;   /* ← ADDED */
   padding: 6px;
   border-radius: 6px;
   transition: background 0.2s;
