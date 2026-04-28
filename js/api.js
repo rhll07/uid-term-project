@@ -1,6 +1,6 @@
-/* api.js — Affirmations API (affirmations.dev)
-   Used on: mental-wellness.html
-   No API key needed. Completely free and unlimited.
+/* api.js — Affirmations via Quotable API
+   Used on: mental.html
+   No API key needed. Free and unlimited. Works locally + GitHub Pages.
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,10 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const affirmationLoading = document.getElementById('affirmationLoading');
   const affirmationError   = document.getElementById('affirmationError');
 
-  if (!affirmationBtn) return; // only runs on mental-wellness.html
+  if (!affirmationBtn) return;
 
   affirmationBtn.addEventListener('click', async () => {
-    // Reset state
     affirmationBox.style.display     = 'none';
     affirmationError.style.display   = 'none';
     affirmationLoading.style.display = 'block';
@@ -22,13 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     affirmationBtn.textContent       = 'Fetching...';
 
     try {
-      const response = await fetch('https://www.affirmations.dev/');
+      const response = await fetch('https://api.quotable.io/random?tags=inspirational');
       const data     = await response.json();
-      affirmationText.textContent = '\u201C' + data.affirmation + '\u201D';
+      affirmationLoading.style.display = 'none';
+      affirmationText.textContent      = '\u201C' + data.content + '\u201D \u2014 ' + data.author;
       affirmationBox.style.display     = 'block';
     } catch (error) {
       affirmationLoading.style.display = 'none';
-      affirmationError.textContent     = '\u26A0\uFE0F Could not fetch affirmation. Please check your connection and try again.';
+      affirmationError.textContent     = '\u26A0\uFE0F Could not fetch. Please check your connection and try again.';
       affirmationError.style.display   = 'block';
     } finally {
       affirmationBtn.disabled    = false;
