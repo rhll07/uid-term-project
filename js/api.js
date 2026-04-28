@@ -1,17 +1,16 @@
-/* api.js — Daily Affirmation (local, no API needed)
-   Used on: mental.html
-   Works locally, on GitHub Pages, everywhere.
-*/
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  const affirmationBtn  = document.getElementById('affirmationBtn');
-  const affirmationBox  = document.getElementById('affirmationBox');
-  const affirmationText = document.getElementById('affirmationText');
+  const motivationBtn  = document.getElementById('motivationBtn');
+  const motivationBox  = document.getElementById('motivationBox');
+  const motivationText = document.getElementById('motivationText');
 
-  if (!affirmationBtn) return;
+  if (!motivationBtn) return;
 
-  const affirmations = [
+  const motivations = [
+    "Push yourself, no one else will!",
+    "Fitness is not a destination, it's a lifestyle.",
+    "Small steps every day!",
+    "No pain, no gain!",
     "You are stronger than you think.",
     "Progress, not perfection.",
     "Every small step forward is still a step forward.",
@@ -31,15 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let lastIndex = -1;
 
-  affirmationBtn.addEventListener('click', () => {
+  motivationBtn.addEventListener('click', () => {
     let index;
-    do { index = Math.floor(Math.random() * affirmations.length); }
+    do { index = Math.floor(Math.random() * motivations.length); }
     while (index === lastIndex);
     lastIndex = index;
 
-    affirmationText.textContent  = '\u201C' + affirmations[index] + '\u201D';
-    affirmationBox.style.display = 'block';
-    affirmationBtn.textContent   = '\u2728 Get Another Affirmation';
+    motivationText.textContent  = '\u201C' + motivations[index] + '\u201D';
+    motivationBox.style.display = 'block';
+    motivationBtn.textContent   = '\u2728 Get Another Motivation';
   });
 
 });

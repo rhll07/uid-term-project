@@ -317,6 +317,23 @@ select, textarea {
 input:focus, textarea:focus, select:focus { outline: 2px solid var(--primary); }
 .error-msg { color: var(--error); font-size: 0.82rem; display: none; }
 
+/* ---Daily Motivation Widget ---*/
+.motivation-section {
+  text-align: center;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+#motivationBox {
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+}
+
+#motivationText {
+  color: var(--text-muted);
+}
+
+
 /* ── Details/Summary ── */
 details {
   background: var(--surface);

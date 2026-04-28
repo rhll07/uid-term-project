@@ -45,10 +45,22 @@
 
     <section class="hero">
       <h1>Your Journey to a Healthier You</h1>
+      <h2>Stay Fit, Stay Healthy</h2>
       <p>Physical fitness, balanced nutrition, and mental well-being — simple, structured, and accessible for everyone.</p>
-      <a href="workouts.html" class="btn">Explore Workouts</a>
-      &nbsp;
       <a href="about.html" class="btn" style="background:var(--green-600)">Learn More</a>
+    </section>
+
+    <!-- Daily Motivation Widget -->
+    <section class="hero">
+      <div class="motivation-section">
+        <h1>Daily Motivation</h1>
+        <p class="subtitle">Need a little boost? Fetch a fresh positive motivation quote just for you.</p>
+        <button class="btn" id="motivationBtn" style="background:var(--green-600)">✨ Motivate Me !</button>
+        <p id="motivationError"></p>
+        <div id="motivationBox">
+          <h1 id="motivationText"></h1>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -65,14 +77,15 @@
         </div>
         <div class="card">
           <div class="card-heading">🧘 Mental Wellness</div>
-          <div class="card-body"><p>Stress management, meditation techniques, sleep habits, and positive lifestyle practices.</p><br><a href="mental.html" style="color:var(--primary); font-weight:700;">Find Your Calm →</a></div>
+          <div class="card-body"><p>Stress management, meditation techniques, sleep habits, and positive lifestyle practices.</p><br><a href="mental.html" style="color:var(--primary); font-weight:700;">Relax Your Mind →</a></div>
         </div>
       </div>
     </section>
   </main>
   <footer>
-    <p>&copy; 2026 <strong>Welnezia</strong> &mdash; Amrita School of Computing, S2 B.Tech CSE-AI</p>
+    <p>&copy; 2026 <strong>Welnezia</strong></p>
   </footer>
   <script src="js/script.js"></script>
+  <script src="js/api.js"></script>
 </body>
 </html>
