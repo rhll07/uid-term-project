@@ -114,14 +114,15 @@
         <legend>Fitness Profile</legend>
 
         <label for="goal">Primary Goal</label>
-        <select id="goal" name="goal">
-          <option value="">-- Select Goal --</option>
-          <option value="Weight Loss">Weight Loss</option>
-          <option value="Muscle Gain">Muscle Gain</option>
-          <option value="Endurance">Endurance</option>
-          <option value="Flexibility">Flexibility</option>
-          <option value="Stress Relief">Stress Relief</option>
-        </select>
+        <input type="text" id="goal" name="goal" list="goalList" placeholder="Select or type your goal...">
+        <datalist id="goalList">
+          <option value="Weight Loss">
+          <option value="Muscle Gain">
+          <option value="Endurance">
+          <option value="Flexibility">
+          <option value="Stress Relief">
+        </datalist>
+
 
         <label for="level">Fitness Level</label>
         <select id="level" name="level">
@@ -147,7 +148,7 @@
 
     <!-- Meet Our Team -->
     <section style="margin:3rem 0 1rem;">
-      <h2>&#128101; Meet Our Team</h2>
+      <h2>👥 Meet Our Team</h2>
       <div class="team-grid">
 
         <div class="card team-card">

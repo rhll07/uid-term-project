@@ -3,17 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welnezia | About Health & Fitness</title>
-  <meta name="description" content="Welnezia – About Health & Fitness. Health, fitness and mental wellness.">
-  <meta name="keywords" content="health, fitness, diet, wellness, workout, nutrition">
-  <meta property="og:title" content="Welnezia | About Health & Fitness">
+  <title>Welnezia | About</title>
+  <meta name="description" content="Welnezia – About us. Learn about our mission, vision and approach to health, fitness and mental wellness.">
+  <meta name="keywords" content="about welnezia, health mission, fitness vision, wellness, nutrition">
+  <meta property="og:title" content="Welnezia | About">
   <meta property="og:image" content="https://picsum.photos/seed/welnezia/1200/630">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nova+Round&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin: 2rem 0;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+      border-radius: 14px;
+    }
+    .faq-section details {
+      margin-bottom: 1rem;
+    }
+    .anchor-btn {
+      display: inline-block;
+      margin-top: 1.25rem;
+      color: var(--primary);
+      font-weight: 700;
+      font-family: var(--font-display);
+      text-decoration: none;
+      border: 2px solid var(--primary);
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .anchor-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <a href="index.html" class="logo">Welnezia</a>
     <nav>
@@ -32,6 +80,7 @@
       <button id="hamburger" aria-label="Open menu"></button>
     </div>
   </header>
+
   <div id="mobile-menu">
     <a href="index.html">Home</a>
     <a href="about.html" class="active">About</a>
@@ -41,35 +90,179 @@
     <a href="blogs.html">Tips</a>
     <a href="contact.html">Contact</a>
   </div>
+
   <main>
 
-    <h1>About Health &amp; Fitness</h1>
-    <p style="color:var(--text-muted); margin-bottom:2rem;">Understanding why fitness matters is the first step to lasting change.</p>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>🌿 About Welnezia</h1>
+      <p>Welnezia is a student-built wellness platform dedicated to making health simple, structured, and accessible for everyone — regardless of age, fitness level, or background.</p>
+      <a href="#faq" class="anchor-btn">Jump to FAQ &#8595;</a>
+    </section>
 
-    <div class="media-wrapper">
-      <iframe width="100%" height="360" src="https://www.youtube.com/embed/v7AYKMP6rOE" title="Why Fitness Matters" frameborder="0" allowfullscreen loading="lazy"></iframe>
-    </div>
+    <!-- Mission -->
+    <section style="margin-bottom:2rem;">
+      <h2>🎯 Our Mission to motivate people to live a healthy lifestyle and stay consistent with their fitness journey.</h2>
+      <p style="color:var(--text-muted); margin-bottom:1.5rem;">We believe true wellness is built on three pillars — physical fitness, balanced nutrition, and mental well-being. Welnezia brings all three together in one place.</p>
+      <div class="about-grid">
 
-    <section style="margin: 2rem 0;">
-      <h2>The Pillars of Good Health</h2>
-      <div class="grid-container">
-        <div class="card"><div class="card-heading">🏃 Regular Exercise</div><div class="card-body"><p>Boosts cardiovascular health, builds muscle strength, and enhances cognitive function.</p></div></div>
-        <div class="card"><div class="card-heading">🥦 Proper Nutrition</div><div class="card-body"><p>Fuels your body with the right nutrients to recover, grow, and sustain daily energy levels.</p></div></div>
-        <div class="card"><div class="card-heading">😴 Quality Sleep</div><div class="card-body"><p>Crucial for muscle repair, hormonal balance, and mental clarity. Aim for 7–9 hours.</p></div></div>
+        <div class="card">
+          <div class="card-heading">💪 Physical Fitness</div>
+          <div class="card-body">
+            <p>We provide structured workout routines for all fitness levels — from beginner bodyweight exercises to advanced strength training. Our goal is to make movement a daily habit, not a chore. Every plan is designed to be practical, progressive, and sustainable.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">🥗 Balanced Nutrition</div>
+          <div class="card-body">
+            <p>Food is fuel. We offer clear, practical meal guidance based on whole foods, portion control, and essential macronutrients. Our calorie calculator and meal guides help you understand what your body truly needs — without fad diets or confusing jargon.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">🧠 Mental Wellness</div>
+          <div class="card-body">
+            <p>A healthy mind is just as important as a healthy body. Welnezia covers stress management, sleep hygiene, meditation techniques, and daily mindfulness practices — because lasting health begins from within.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section style="margin: 2rem 0;">
-      <h2>Frequently Asked Questions</h2>
-      <details><summary>Why is fitness important?</summary><p>It improves cardiovascular health, builds muscle, enhances mental clarity, reduces stress, and helps prevent chronic diseases.</p></details>
-      <details><summary>What are the risks of a sedentary lifestyle?</summary><p>Increased risk of obesity, heart disease, type-2 diabetes, depression, and a significantly reduced metabolic rate.</p></details>
-      <details><summary>How often should a beginner exercise?</summary><p>Start with 3–4 days per week with moderate intensity. Consistency matters more than intensity in the beginning.</p></details>
-      <details><summary>Can I get fit without a gym?</summary><p>Absolutely! Bodyweight exercises like push-ups, squats, and yoga can be extremely effective when done regularly.</p></details>
+    <!-- Why Welnezia -->
+    <section style="margin-bottom:2rem;">
+      <h2>✨ Why Welnezia?</h2>
+      <p style="color:var(--text-muted); margin-bottom:1.5rem;">What makes us different from the noise out there.</p>
+      <div class="about-grid">
+
+        <div class="card">
+          <div class="card-heading">🔬 Evidence Based</div>
+          <div class="card-body">
+            <p>Every piece of content on Welnezia is grounded in established health and fitness research — no myths, no shortcuts, no pseudoscience. We link to real sources so you can verify everything yourself.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">🚀 Beginner Friendly</div>
+          <div class="card-body">
+            <p>We designed Welnezia for real people starting from zero. No intimidating jargon, no unrealistic expectations. Whether you've never exercised or just need a reset, this is your starting point.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-heading">🤍 Completely Free</div>
+          <div class="card-body">
+            <p>Welnezia is and will always be 100% free. No paywalls, no subscriptions, no hidden fees. Good health information should be available to everyone — that's non-negotiable for us.</p>
+          </div>
+        </div>
+
+      </div>
     </section>
+
+    <!-- YouTube Embed -->
+    <section style="margin-bottom:2rem;">
+      <h2>🎥 Why Health &amp; Fitness Matters</h2>
+      <p style="color:var(--text-muted); margin-bottom:1rem;">Watch this eye-opening video on how daily habits around movement, food, and rest compound into long-term health — and why starting small is the most powerful thing you can do.</p>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/_HEnohs6yYw"
+          title="The Importance of Health and Fitness - YouTube"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq" style="margin-bottom:2rem;">
+      <h2>❓ Frequently Asked Questions</h2>
+      <p style="color:var(--text-muted); margin-bottom:1.5rem;">Everything you need to know about fitness, nutrition, and mental wellness — answered simply.</p>
+
+      <h3 style="margin:1.5rem 0 0.75rem;">💪 Fitness</h3>
+
+      <details>
+        <summary>Why is fitness important?</summary>
+        <p>Regular physical activity improves cardiovascular health, builds muscle, enhances mental clarity, reduces stress, and helps prevent chronic diseases like diabetes, obesity, and heart disease.</p>
+      </details>
+
+      <details>
+        <summary>What are the risks of a sedentary lifestyle?</summary>
+        <p>Sitting too much increases the risk of obesity, type 2 diabetes, cardiovascular disease, poor posture, and even depression. Even light movement throughout the day can significantly reduce these risks.</p>
+      </details>
+
+      <details>
+        <summary>How often should a beginner exercise?</summary>
+        <p>Beginners should aim for 3–4 days per week, starting with 20–30 minute sessions. Focus on consistency over intensity — building the habit matters more than pushing hard too soon.</p>
+      </details>
+
+      <details>
+        <summary>Can I get fit without a gym?</summary>
+        <p>Absolutely. Bodyweight exercises like push-ups, squats, lunges, and planks can build real strength and fitness. A pair of resistance bands and consistency will take you further than any gym membership without dedication.</p>
+      </details>
+
+      <details>
+        <summary>How long before I see results?</summary>
+        <p>Most people notice improved energy and mood within 2 weeks. Visible physical changes typically take 6–8 weeks of consistent training and proper nutrition. Progress photos and strength logs help you see what the mirror might miss.</p>
+      </details>
+
+      <h3 style="margin:1.5rem 0 0.75rem;">🥗 Nutrition</h3>
+
+      <details>
+        <summary>How much protein do I need per day?</summary>
+        <p>For general health, 0.8g per kg of body weight is the minimum. For muscle building or active individuals, 1.2–2.0g per kg is recommended. Good sources include eggs, chicken, fish, legumes, paneer, and Greek yogurt.</p>
+      </details>
+
+      <details>
+        <summary>Are carbohydrates bad for you?</summary>
+        <p>No. Carbohydrates are your body's primary energy source. The key is choosing complex carbs — oats, brown rice, fruits, vegetables, and whole grains — over refined sugars and processed foods.</p>
+      </details>
+
+      <details>
+        <summary>Should I skip meals to lose weight?</summary>
+        <p>No. Skipping meals often leads to overeating later and slows your metabolism. Instead, focus on eating smaller, balanced meals regularly. A calorie deficit through mindful eating is far more effective and sustainable.</p>
+      </details>
+
+      <details>
+        <summary>How much water should I drink daily?</summary>
+        <p>The general recommendation is 2.5–3 litres per day for adults. Active individuals and those in hot climates need more. A good rule of thumb — if your urine is pale yellow, you're well hydrated.</p>
+      </details>
+
+      <details>
+        <summary>What are the best foods for energy?</summary>
+        <p>Complex carbs like oats and bananas, healthy fats like nuts and avocado, and lean proteins like eggs and legumes all provide sustained energy. Avoid sugar spikes from processed snacks — they lead to energy crashes.</p>
+      </details>
+
+      <h3 style="margin:1.5rem 0 0.75rem;">🧠 Mental Wellness</h3>
+
+      <details>
+        <summary>How does exercise affect mental health?</summary>
+        <p>Exercise releases endorphins and serotonin — your brain's natural mood boosters. Regular physical activity is clinically proven to reduce symptoms of anxiety and depression, improve sleep quality, and boost self-esteem.</p>
+      </details>
+
+      <details>
+        <summary>How many hours of sleep do adults need?</summary>
+        <p>Most adults need 7–9 hours of quality sleep per night. Sleep is when your muscles repair, memory consolidates, and hormones regulate. Chronic sleep deprivation is linked to weight gain, poor focus, and increased stress.</p>
+      </details>
+
+      <details>
+        <summary>What are simple ways to manage stress daily?</summary>
+        <p>Deep breathing (box breathing or 4-7-8 method), 10-minute walks, journaling, limiting screen time before bed, and talking to someone you trust are all proven, simple stress management techniques you can start today.</p>
+      </details>
+
+      <details>
+        <summary>Does meditation actually work?</summary>
+        <p>Yes — and the science backs it. Even 10 minutes of daily mindfulness meditation has been shown to reduce cortisol (stress hormone) levels, improve focus, and increase emotional resilience over time. Apps like Headspace or simply focusing on your breath are great starting points.</p>
+      </details>
+
+    </section>
+
   </main>
+
   <footer>
-    <p>&copy; 2026 <strong>Welnezia</strong> &mdash; Amrita School of Computing, S2 B.Tech CSE-AI</p>
+    <p>&copy; 2026 <strong>Welnezia</strong></p>
   </footer>
+
   <script src="js/script.js"></script>
 </body>
 </html>

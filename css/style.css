@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nova+Round&display=swap');
 
-/* ── Reset ── */
+
+/* ════════════════════════════════════════
+   RESET
+════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html {
   scroll-behavior: smooth;
@@ -11,7 +14,10 @@ body {
   max-width: 100%;
 }
 
-/* ── CSS Variables ── */
+
+/* ════════════════════════════════════════
+   CSS VARIABLES (Light Theme)
+════════════════════════════════════════ */
 :root {
   --green-50:  #e8f5ee;
   --green-100: #c8e6d4;
@@ -37,6 +43,10 @@ body {
   --font-body:         'Nova Mono', monospace;
 }
 
+
+/* ════════════════════════════════════════
+   CSS VARIABLES (Dark Theme)
+════════════════════════════════════════ */
 [data-theme="dark"] {
   --bg:                #0a0f0b;
   --surface:           rgba(20,35,25,0.60);
@@ -52,7 +62,10 @@ body {
   --error:             #f87171;
 }
 
-/* ── Mesh Gradient Background ── */
+
+/* ════════════════════════════════════════
+   MESH GRADIENT BACKGROUND
+════════════════════════════════════════ */
 body {
   font-family: var(--font-body);
   color: var(--text);
@@ -84,7 +97,10 @@ body::before {
     var(--bg);
 }
 
-/* ── Glassmorphism Navbar ── */
+
+/* ════════════════════════════════════════
+   GLASSMORPHISM NAVBAR
+════════════════════════════════════════ */
 header {
   background: var(--nav-bg);
   backdrop-filter: blur(24px) saturate(180%);
@@ -107,6 +123,7 @@ header {
   color: var(--primary);
   text-decoration: none;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .nav-links {
@@ -122,6 +139,7 @@ header {
   font-family: var(--font-body);
   font-weight: 600;
   transition: color 0.2s;
+  cursor: pointer;
 }
 
 .nav-links a:hover,
@@ -141,8 +159,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;    /* ← ADDED */
-  height: 36px;   /* ← ADDED */
+  width: 36px;
+  height: 36px;
   padding: 6px;
   border-radius: 6px;
   transition: background 0.2s;
@@ -150,7 +168,10 @@ header {
 
 #theme-toggle:hover, #hamburger:hover { background: rgba(45,122,79,0.12); }
 
-/* ── Mobile Menu ── */
+
+/* ════════════════════════════════════════
+   MOBILE MENU
+════════════════════════════════════════ */
 #mobile-menu {
   display: none;
   position: fixed;
@@ -178,6 +199,7 @@ header {
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--border);
   transition: color 0.2s;
+  cursor: pointer;
 }
 
 #mobile-menu a:hover { color: var(--primary); }
@@ -189,7 +211,10 @@ header {
   #hamburger  { display: flex; }
 }
 
-/* ── Main Layout ── */
+
+/* ════════════════════════════════════════
+   MAIN LAYOUT
+════════════════════════════════════════ */
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -204,7 +229,10 @@ h1, h2, h3, h4 {
   margin-bottom: 0.75rem;
 }
 
-/* ── Hero Section ── */
+
+/* ════════════════════════════════════════
+   HERO SECTION
+════════════════════════════════════════ */
 .hero {
   text-align: center;
   padding: 5rem 1rem 4rem;
@@ -213,7 +241,10 @@ h1, h2, h3, h4 {
 .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
 .hero p  { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; }
 
-/* ── Glass Cards ── */
+
+/* ════════════════════════════════════════
+   GLASS CARDS
+════════════════════════════════════════ */
 .card {
   background: var(--surface);
   backdrop-filter: blur(16px) saturate(160%);
@@ -241,7 +272,10 @@ h1, h2, h3, h4 {
 
 .card-body { padding: 1.25rem; }
 
-/* ── Grid ── */
+
+/* ════════════════════════════════════════
+   GRID
+════════════════════════════════════════ */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -249,7 +283,10 @@ h1, h2, h3, h4 {
   margin: 2rem 0;
 }
 
-/* ── Buttons ── */
+
+/* ════════════════════════════════════════
+   BUTTONS
+════════════════════════════════════════ */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.8rem;
@@ -266,7 +303,10 @@ h1, h2, h3, h4 {
 
 .btn:hover { transform: translateY(-2px); filter: brightness(1.12); }
 
-/* ── Tables ── */
+
+/* ════════════════════════════════════════
+   TABLES
+════════════════════════════════════════ */
 table           { width: 100%; border-collapse: collapse; margin: 2rem 0; }
 caption         { padding: 0.75rem; font-family: var(--font-display); color: var(--text-muted); }
 th, td          { padding: 0.85rem 1rem; border: 1px solid rgba(45,122,79,0.2); text-align: left; }
@@ -274,7 +314,10 @@ thead th        { background: var(--green-400); color: #fff; font-family: var(--
 tbody tr:nth-child(even) { background: rgba(45,122,79,0.05); }
 tfoot td        { font-weight: bold; background: rgba(45,122,79,0.08); }
 
-/* ── Forms ── */
+
+/* ════════════════════════════════════════
+   FORMS
+════════════════════════════════════════ */
 form {
   background: var(--surface);
   backdrop-filter: blur(16px);
@@ -292,7 +335,7 @@ form {
 
 fieldset { border: 1px solid rgba(45,122,79,0.25); padding: 1.25rem; border-radius: 8px; }
 legend   { padding: 0 0.5rem; color: var(--primary); font-family: var(--font-display); }
-label    { font-weight: 600; display: block; margin-top: 0.5rem; }
+label    { font-weight: 600; display: block; margin-top: 0.5rem; cursor: pointer; }
 
 input[type="text"],
 input[type="email"],
@@ -310,6 +353,19 @@ select, textarea {
   margin-top: 0.3rem;
 }
 
+/* ── Cursor UX cues ── */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+textarea            { cursor: text; }
+
+select              { cursor: pointer; }
+
+input[type="radio"],
+input[type="checkbox"] { cursor: pointer; }
+
 [data-theme="dark"] input,
 [data-theme="dark"] select,
 [data-theme="dark"] textarea { background: rgba(20,50,30,0.4); }
@@ -317,7 +373,10 @@ select, textarea {
 input:focus, textarea:focus, select:focus { outline: 2px solid var(--primary); }
 .error-msg { color: var(--error); font-size: 0.82rem; display: none; }
 
-/* ---Daily Motivation Widget ---*/
+
+/* ════════════════════════════════════════
+   DAILY MOTIVATION WIDGET
+════════════════════════════════════════ */
 .motivation-section {
   text-align: center;
   max-width: 700px;
@@ -334,7 +393,9 @@ input:focus, textarea:focus, select:focus { outline: 2px solid var(--primary); }
 }
 
 
-/* ── Details/Summary ── */
+/* ════════════════════════════════════════
+   DETAILS / SUMMARY (FAQ Accordion)
+════════════════════════════════════════ */
 details {
   background: var(--surface);
   backdrop-filter: blur(12px);
@@ -344,16 +405,22 @@ details {
   margin-bottom: 1rem;
 }
 
-summary    { cursor: pointer; color: var(--primary); font-family: var(--font-display); font-weight: 700; }
-details p  { margin-top: 0.75rem; color: var(--text-muted); }
+summary   { cursor: pointer; color: var(--primary); font-family: var(--font-display); font-weight: 700; }
+details p { margin-top: 0.75rem; color: var(--text-muted); }
 
-/* ── Media ── */
+
+/* ════════════════════════════════════════
+   MEDIA
+════════════════════════════════════════ */
 img, video      { max-width: 100%; height: auto; border-radius: 10px; }
 .media-wrapper  { margin: 2rem 0; text-align: center; max-width: 100%; overflow: hidden; }
 canvas          { border-radius: 10px; background: var(--surface); border: 1px solid var(--border); max-width: 100%; }
 iframe          { border-radius: 10px; max-width: 100%; }
 
-/* ── Footer ── */
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
 footer {
   text-align: center;
   padding: 2rem;
@@ -366,16 +433,40 @@ footer {
   width: 100%;
 }
 
-/* ── Selectors / Pseudo-classes / Pseudo-elements ── */
-nav > ul > li > a:not(.active):hover  { opacity: 0.8; }
-.card:nth-child(odd)                  { border-top: 3px solid var(--primary); }
-.card:nth-child(even)                 { border-top: 3px solid var(--green-200); }
-input[type="checkbox"] + label        { cursor: pointer; }
-.card::before                         { content: ''; display: block; }
-details summary::after                { content: ' ▾'; }
-details[open] summary::after          { content: ' ▴'; }
+/* ::after on footer for a decorative touch */
+footer p::after {
+  content: ' 🌿';
+}
 
-/* ── Responsive ── */
+
+/* ════════════════════════════════════════
+   SELECTORS, PSEUDO-CLASSES & PSEUDO-ELEMENTS
+════════════════════════════════════════ */
+
+/* Adjacent sibling — nav active underline indicator */
+.nav-links a.active + a { opacity: 1; }
+
+/* Descendant + :not() pseudo-class */
+nav > ul > li > a:not(.active):hover { opacity: 0.8; }
+
+/* nth-child on cards — alternating accent border */
+.card:nth-child(odd)  { border-top: 3px solid var(--primary); }
+.card:nth-child(even) { border-top: 3px solid var(--green-200); }
+
+/* Attribute selector on checkbox label */
+input[type="checkbox"] + label { cursor: pointer; }
+
+/* ::before pseudo-element — decorative card top line */
+.card::before { content: ''; display: block; }
+
+/* ::after pseudo-elements — FAQ arrow indicators */
+details summary::after       { content: ' ▾'; }
+details[open] summary::after { content: ' ▴'; }
+
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
 @media (max-width: 768px) {
   .hero h1         { font-size: 2rem; }
   .hero            { padding: 3rem 1rem 2rem; }
