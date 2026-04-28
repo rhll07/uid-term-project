@@ -12,8 +12,48 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nova+Round&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+      .team-grid { grid-template-columns: 1fr; }
+    }
+    .team-card {
+      text-align: center;
+    }
+    .team-card .avatar {
+      font-size: 4rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .team-card .member-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    .team-card .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+    .team-card .social-links a img {
+      width: 26px;
+      height: 26px;
+      transition: opacity 0.2s;
+    }
+    .team-card .social-links a:hover img {
+      opacity: 0.7;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <a href="index.html" class="logo">Welnezia</a>
     <nav>
@@ -32,6 +72,7 @@
       <button id="hamburger" aria-label="Open menu"></button>
     </div>
   </header>
+
   <div id="mobile-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -41,6 +82,7 @@
     <a href="blogs.html">Tips</a>
     <a href="contact.html" class="active">Contact</a>
   </div>
+
   <main>
 
     <h1 style="text-align:center;">Contact Us</h1>
@@ -49,16 +91,17 @@
     <form id="contactForm" novalidate>
       <fieldset>
         <legend>Personal Details</legend>
+
         <label for="name">Full Name *</label>
-        <input type="text" id="name" name="name" required placeholder="e.g. Rahul Krishna" pattern="[A-Za-z ]+">
+        <input type="text" id="name" name="name" required placeholder="e.g. John" pattern="[A-Za-z ]+">
         <span class="error-msg" id="nameErr"></span>
 
         <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" required placeholder="you@example.com">
+        <input type="email" id="email" name="email" required placeholder="someone@example.com">
         <span class="error-msg" id="emailErr"></span>
 
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]{10}" maxlength="10">
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10">
 
         <label for="dob">Date of Birth</label>
         <input type="date" id="dob" name="dob">
@@ -69,15 +112,16 @@
 
       <fieldset>
         <legend>Fitness Profile</legend>
+
         <label for="goal">Primary Goal</label>
-        <input type="text" id="goal" name="goal" list="goalList" placeholder="Select or type goal...">
-        <datalist id="goalList">
-          <option value="Weight Loss">
-          <option value="Muscle Gain">
-          <option value="Endurance">
-          <option value="Flexibility">
-          <option value="Stress Relief">
-        </datalist>
+        <select id="goal" name="goal">
+          <option value="">-- Select Goal --</option>
+          <option value="Weight Loss">Weight Loss</option>
+          <option value="Muscle Gain">Muscle Gain</option>
+          <option value="Endurance">Endurance</option>
+          <option value="Flexibility">Flexibility</option>
+          <option value="Stress Relief">Stress Relief</option>
+        </select>
 
         <label for="level">Fitness Level</label>
         <select id="level" name="level">
@@ -96,36 +140,70 @@
 
         <label for="message" style="margin-top:1rem;">Your Message</label>
         <textarea id="message" name="message" rows="4" placeholder="Tell us about yourself or ask a question..."></textarea>
-
-        <label style="display:flex; align-items:center; gap:0.5rem; margin-top:1rem; font-weight:400; cursor:pointer;">
-          <input type="checkbox" required> I agree to the privacy policy *
-        </label>
       </fieldset>
 
-      <button type="submit" class="btn" style="width:100%; font-size:1rem;">Send Message 🌿</button>
+      <button type="submit" class="btn" style="width:100%; font-size:1rem;">Send Message</button>
     </form>
 
-    <section style="text-align:center; margin:3rem 0 1rem;">
-      <h3>Connect With Us</h3>
-      <div style="display:flex; justify-content:center; gap:1.5rem; margin-top:1rem;">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <img src="https://cdn.simpleicons.org/instagram/2d7a4f" width="32" height="32" alt="Instagram" loading="lazy">
-        </a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <img src="https://cdn.simpleicons.org/github/2d7a4f" width="32" height="32" alt="GitHub" loading="lazy">
-        </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
-          <img src="https://cdn.simpleicons.org/x/2d7a4f" width="32" height="32" alt="Twitter X" loading="lazy">
-        </a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-          <img src="https://cdn.simpleicons.org/youtube/2d7a4f" width="32" height="32" alt="YouTube" loading="lazy">
-        </a>
+    <!-- Meet Our Team -->
+    <section style="margin:3rem 0 1rem;">
+      <h2>&#128101; Meet Our Team</h2>
+      <div class="team-grid">
+
+        <div class="card team-card">
+          <span class="avatar">🤵🏻‍♀️</span>
+          <div class="member-name">Bhumi</div>
+          <div class="social-links">
+            <a href="https://github.com/bhumiagarwal581" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <img src="https://cdn.simpleicons.org/github/2d7a4f" alt="GitHub" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/_bhumi._agarwal" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img src="https://cdn.simpleicons.org/instagram/2d7a4f" alt="Instagram" loading="lazy">
+            </a>
+          </div>
+        </div>
+
+        <div class="card team-card">
+          <span class="avatar">🤵🏻‍♀️</span>
+          <div class="member-name">Namrata</div>
+          <div class="social-links">
+            <a href="https://github.com/Namratha237" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <img src="https://cdn.simpleicons.org/github/2d7a4f" alt="GitHub" loading="lazy">
+            </a>
+            <a href="https://www.linkedin.com/in/namratha-godhari-0747b1406/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" style="width:26px; height:26px; filter: invert(35%) sepia(60%) saturate(400%) hue-rotate(100deg);" alt="LinkedIn" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/namratha.srinivasss" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img src="https://cdn.simpleicons.org/instagram/2d7a4f" alt="Instagram" loading="lazy">
+            </a>
+          </div>
+        </div>
+
+        <div class="card team-card">
+          <span class="avatar">🤵🏻‍♂️</span>
+          <div class="member-name">Rahul</div>
+          <div class="social-links">
+            <a href="https://github.com/rhll07" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <img src="https://cdn.simpleicons.org/github/2d7a4f" alt="GitHub" loading="lazy">
+            </a>
+            <a href="https://www.linkedin.com/in/rhll07/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" style="width:26px; height:26px; filter: invert(35%) sepia(60%) saturate(400%) hue-rotate(100deg);" alt="LinkedIn" loading="lazy">
+            </a>
+            <a href="https://instagram.com/rhll07" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img src="https://cdn.simpleicons.org/instagram/2d7a4f" alt="Instagram" loading="lazy">
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
+
   </main>
+
   <footer>
     <p>&copy; 2026 <strong>Welnezia</strong> &mdash; Amrita School of Computing, S2 B.Tech CSE-AI</p>
   </footer>
+
   <script src="js/script.js"></script>
 </body>
 </html>
