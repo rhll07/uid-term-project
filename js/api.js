@@ -1,39 +1,45 @@
-/* api.js — Affirmations via Quotable API
+/* api.js — Daily Affirmation (local, no API needed)
    Used on: mental.html
-   No API key needed. Free and unlimited. Works locally + GitHub Pages.
+   Works locally, on GitHub Pages, everywhere.
 */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const affirmationBtn     = document.getElementById('affirmationBtn');
-  const affirmationBox     = document.getElementById('affirmationBox');
-  const affirmationText    = document.getElementById('affirmationText');
-  const affirmationLoading = document.getElementById('affirmationLoading');
-  const affirmationError   = document.getElementById('affirmationError');
+  const affirmationBtn  = document.getElementById('affirmationBtn');
+  const affirmationBox  = document.getElementById('affirmationBox');
+  const affirmationText = document.getElementById('affirmationText');
 
   if (!affirmationBtn) return;
 
-  affirmationBtn.addEventListener('click', async () => {
-    affirmationBox.style.display     = 'none';
-    affirmationError.style.display   = 'none';
-    affirmationLoading.style.display = 'block';
-    affirmationBtn.disabled          = true;
-    affirmationBtn.textContent       = 'Fetching...';
+  const affirmations = [
+    "You are stronger than you think.",
+    "Progress, not perfection.",
+    "Every small step forward is still a step forward.",
+    "Your mental health is a priority, not a luxury.",
+    "Rest is productive. Breathe.",
+    "You have survived every difficult day so far.",
+    "Be kind to yourself today.",
+    "One day at a time.",
+    "Your feelings are valid.",
+    "Growth happens outside your comfort zone.",
+    "You are enough, exactly as you are.",
+    "Difficult roads often lead to beautiful destinations.",
+    "Take care of your body — it's the only place you live.",
+    "Healing is not linear. Keep going.",
+    "You deserve peace and happiness."
+  ];
 
-    try {
-      const response = await fetch('https://zenquotes.io/api/random');
-      const data     = await response.json();
-      affirmationLoading.style.display = 'none';
-      affirmationText.textContent      = '\u201C' + data[0].q + '\u201D \u2014 ' + data[0].a;
-      affirmationBox.style.display     = 'block';
-    } catch (error) {
-      affirmationLoading.style.display = 'none';
-      affirmationError.textContent     = '\u26A0\uFE0F Could not fetch. Please check your connection and try again.';
-      affirmationError.style.display   = 'block';
-    } finally {
-      affirmationBtn.disabled    = false;
-      affirmationBtn.textContent = '\u2728 Get Another Affirmation';
-    }
+  let lastIndex = -1;
+
+  affirmationBtn.addEventListener('click', () => {
+    let index;
+    do { index = Math.floor(Math.random() * affirmations.length); }
+    while (index === lastIndex);
+    lastIndex = index;
+
+    affirmationText.textContent  = '\u201C' + affirmations[index] + '\u201D';
+    affirmationBox.style.display = 'block';
+    affirmationBtn.textContent   = '\u2728 Get Another Affirmation';
   });
 
 });
