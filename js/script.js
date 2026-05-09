@@ -89,56 +89,39 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.fillText('Focus on the present moment', cx, cy + Math.round(size * 0.058));
   }
 
-  /* ── BMR Calculator - Nutrition Page ── */
-  const bmrForm   = document.getElementById('bmrForm');
-  const bmrResult = document.getElementById('bmrResult');
+/* ── BMR Calculator – Nutrition Page ── */
+const calcBtn = document.getElementById('calcBtn');
+if (calcBtn) {
+  calcBtn.addEventListener('click', function () {
+    const age = parseFloat(document.getElementById('calcAge').value);
+    const weight = parseFloat(document.getElementById('calcWeight').value);
+    const height = parseFloat(document.getElementById('calcHeight').value);
+    const activity = parseFloat(document.getElementById('calcActivity').value);
+    const gender = document.querySelector('input[name="calcGender"]:checked').value;
 
-  if (bmrForm && bmrResult) {
-    bmrForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var weight   = parseFloat(document.getElementById('weight').value);
-      var height   = parseFloat(document.getElementById('height').value);
-      var age      = parseFloat(document.getElementById('age').value);
-      var gender   = document.getElementById('gender').value;
-      var activity = parseFloat(document.getElementById('activity').value);
+    if (!age || !weight || !height || !activity) {
+      alert('Please fill in all fields.');
+      return;
+    }
 
-      if (!weight || !height || !age || !gender || !activity) {
-        bmrResult.innerHTML = '<p style="color:var(--error)">Please fill in all fields.</p>';
-        return;
-      }
+    let bmr = gender === 'male'
+      ? (10 * weight + 6.25 * height - 5 * age + 5)
+      : (10 * weight + 6.25 * height - 5 * age - 161);
 
-      var bmr = gender === 'male'
-        ? (10 * weight + 6.25 * height - 5 * age + 5)
-        : (10 * weight + 6.25 * height - 5 * age - 161);
+    const tdee = Math.round(bmr * activity);
+    bmr = Math.round(bmr);
 
-      var tdee = Math.round(bmr * activity);
-      bmr = Math.round(bmr);
+    const protein = Math.round((tdee * 0.30) / 4);
+    const carbs   = Math.round((tdee * 0.45) / 4);
+    const fat     = Math.round((tdee * 0.25) / 9);
 
-      bmrResult.innerHTML =
-        '<p><strong>BMR:</strong> ' + bmr + ' kcal/day</p>' +
-        '<p><strong>Daily Calorie Needs (TDEE):</strong> ' + tdee + ' kcal/day</p>' +
-        '<p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.5rem;">BMR = calories at rest. TDEE = BMR x activity multiplier.</p>';
-    });
-  }
-
-  /* ── Geolocation - Contact Page ── */
-  const geoBtn    = document.getElementById('geoBtn');
-  const geoResult = document.getElementById('geoResult');
-
-  if (geoBtn) {
-    geoBtn.addEventListener('click', () => {
-      if (!navigator.geolocation) {
-        geoResult.textContent = 'Geolocation not supported by your browser.';
-        return;
-      }
-      geoResult.textContent = 'Locating...';
-      navigator.geolocation.getCurrentPosition(
-        function(p) { geoResult.textContent = 'Lat: ' + p.coords.latitude.toFixed(4) + ', Lng: ' + p.coords.longitude.toFixed(4); },
-        function()  { geoResult.textContent = 'Location access denied.'; }
-      );
-    });
-  }
-
+    document.getElementById('calcResult').style.display = 'block';
+    document.getElementById('tdeeVal').textContent   = tdee + ' kcal/day';
+    document.getElementById('proteinVal').textContent = protein;
+    document.getElementById('carbsVal').textContent   = carbs;
+    document.getElementById('fatVal').textContent     = fat;
+  });
+}
   /* ── Form Validation - Contact Page ── */
   const form = document.getElementById('contactForm');
 
