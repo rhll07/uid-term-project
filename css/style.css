@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nova+Round&display=swap');
 
-
-/* ════════════════════════════════════════
-   RESET
-════════════════════════════════════════ */
+/*RESET*/
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html {
   scroll-behavior: smooth;
@@ -15,9 +12,7 @@ body {
 }
 
 
-/* ════════════════════════════════════════
-   CSS VARIABLES (Light Theme)
-════════════════════════════════════════ */
+/*CSS VARIABLES (Light Theme)*/
 :root {
   --green-50:  #e8f5ee;
   --green-100: #c8e6d4;
@@ -44,9 +39,7 @@ body {
 }
 
 
-/* ════════════════════════════════════════
-   CSS VARIABLES (Dark Theme)
-════════════════════════════════════════ */
+/*CSS VARIABLES (Dark Theme)*/
 [data-theme="dark"] {
   --bg:                #0a0f0b;
   --surface:           rgba(20,35,25,0.60);
@@ -63,9 +56,7 @@ body {
 }
 
 
-/* ════════════════════════════════════════
-   MESH GRADIENT BACKGROUND
-════════════════════════════════════════ */
+/*Mesh Gradient Background*/
 body {
   font-family: var(--font-body);
   color: var(--text);
@@ -98,9 +89,7 @@ body::before {
 }
 
 
-/* ════════════════════════════════════════
-   GLASSMORPHISM NAVBAR
-════════════════════════════════════════ */
+/*Frost Glass Navbar*/
 header {
   background: var(--nav-bg);
   backdrop-filter: blur(24px) saturate(180%);
@@ -169,9 +158,7 @@ header {
 #theme-toggle:hover, #hamburger:hover { background: rgba(45,122,79,0.12); }
 
 
-/* ════════════════════════════════════════
-   MOBILE MENU
-════════════════════════════════════════ */
+/*Mobile-Menu*/
 #mobile-menu {
   display: none;
   position: fixed;
@@ -212,9 +199,7 @@ header {
 }
 
 
-/* ════════════════════════════════════════
-   MAIN LAYOUT
-════════════════════════════════════════ */
+/*Main Layout*/
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -230,9 +215,7 @@ h1, h2, h3, h4 {
 }
 
 
-/* ════════════════════════════════════════
-   HERO SECTION
-════════════════════════════════════════ */
+/*Hero Section*/
 .hero {
   text-align: center;
   padding: 5rem 1rem 4rem;
@@ -242,9 +225,7 @@ h1, h2, h3, h4 {
 .hero p  { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; }
 
 
-/* ════════════════════════════════════════
-   GLASS CARDS
-════════════════════════════════════════ */
+/*Feature Cards*/
 .card {
   background: var(--surface);
   backdrop-filter: blur(16px) saturate(160%);
@@ -273,9 +254,7 @@ h1, h2, h3, h4 {
 .card-body { padding: 1.25rem; }
 
 
-/* ════════════════════════════════════════
-   GRID
-════════════════════════════════════════ */
+/*Grid*/
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -283,10 +262,7 @@ h1, h2, h3, h4 {
   margin: 2rem 0;
 }
 
-
-/* ════════════════════════════════════════
-   BUTTONS
-════════════════════════════════════════ */
+/*Buttons*/
 .btn {
   display: inline-block;
   padding: 0.75rem 1.8rem;
@@ -303,10 +279,7 @@ h1, h2, h3, h4 {
 
 .btn:hover { transform: translateY(-2px); filter: brightness(1.12); }
 
-
-/* ════════════════════════════════════════
-   TABLES
-════════════════════════════════════════ */
+/*Tables*/
 table           { width: 100%; border-collapse: collapse; margin: 2rem 0; }
 caption         { padding: 0.75rem; font-family: var(--font-display); color: var(--text-muted); }
 th, td          { padding: 0.85rem 1rem; border: 1px solid rgba(45,122,79,0.2); text-align: left; }
@@ -314,10 +287,7 @@ thead th        { background: var(--green-400); color: #fff; font-family: var(--
 tbody tr:nth-child(even) { background: rgba(45,122,79,0.05); }
 tfoot td        { font-weight: bold; background: rgba(45,122,79,0.08); }
 
-
-/* ════════════════════════════════════════
-   FORMS
-════════════════════════════════════════ */
+/*Forms*/
 form {
   background: var(--surface);
   backdrop-filter: blur(16px);
@@ -353,7 +323,7 @@ select, textarea {
   margin-top: 0.3rem;
 }
 
-/* ── Cursor UX cues ── */
+/*Cursor UX cues*/
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -374,9 +344,7 @@ input:focus, textarea:focus, select:focus { outline: 2px solid var(--primary); }
 .error-msg { color: var(--error); font-size: 0.82rem; display: none; }
 
 
-/* ════════════════════════════════════════
-   DAILY MOTIVATION WIDGET
-════════════════════════════════════════ */
+/*Daily Motivation Widget*/
 .motivation-section {
   text-align: center;
   max-width: 700px;
@@ -393,9 +361,7 @@ input:focus, textarea:focus, select:focus { outline: 2px solid var(--primary); }
 }
 
 
-/* ════════════════════════════════════════
-   DETAILS / SUMMARY (FAQ Accordion)
-════════════════════════════════════════ */
+/*FAQ Section*/
 details {
   background: var(--surface);
   backdrop-filter: blur(12px);
@@ -408,19 +374,13 @@ details {
 summary   { cursor: pointer; color: var(--primary); font-family: var(--font-display); font-weight: 700; }
 details p { margin-top: 0.75rem; color: var(--text-muted); }
 
-
-/* ════════════════════════════════════════
-   MEDIA
-════════════════════════════════════════ */
+/*Media*/
 img, video      { max-width: 100%; height: auto; border-radius: 10px; }
 .media-wrapper  { margin: 2rem 0; text-align: center; max-width: 100%; overflow: hidden; }
 canvas          { border-radius: 10px; background: var(--surface); border: 1px solid var(--border); max-width: 100%; }
 iframe          { border-radius: 10px; max-width: 100%; }
 
-
-/* ════════════════════════════════════════
-   FOOTER
-════════════════════════════════════════ */
+/*Footer*/
 footer {
   text-align: center;
   padding: 2rem;
@@ -433,10 +393,7 @@ footer {
   width: 100%;
 }
 
-
-/* ════════════════════════════════════════
-   SELECTORS, PSEUDO-CLASSES & PSEUDO-ELEMENTS
-════════════════════════════════════════ */
+/*Selectors, Pseudo-classes & Pseudo-elements*/
 
 /* Adjacent sibling — nav active underline indicator */
 .nav-links a.active + a { opacity: 1; }
@@ -458,10 +415,7 @@ input[type="checkbox"] + label { cursor: pointer; }
 details summary::after       { content: ' ▾'; }
 details[open] summary::after { content: ' ▴'; }
 
-
-/* ════════════════════════════════════════
-   RESPONSIVE
-════════════════════════════════════════ */
+/*Responsiveness*/
 @media (max-width: 768px) {
   .hero h1         { font-size: 2rem; }
   .hero            { padding: 3rem 1rem 2rem; }
