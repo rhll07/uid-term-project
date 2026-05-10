@@ -55,40 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Canvas - Mental Wellness Page ── */
-  const canvas = document.getElementById('wellnessCanvas');
-  if (canvas) {
-    const ctx    = canvas.getContext('2d');
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    const size   = Math.min(canvas.parentElement.clientWidth, 400);
-    canvas.width  = size;
-    canvas.height = Math.round(size * 0.65);
-
-    const cx   = canvas.width  / 2;
-    const cy   = canvas.height / 2;
-    const maxR = Math.round(Math.min(cx, cy) * 0.85);
-
-    [
-      { r: maxR,                    color: 'rgba(45,122,79,0.12)' },
-      { r: Math.round(maxR * 0.72), color: 'rgba(45,122,79,0.22)' },
-      { r: Math.round(maxR * 0.44), color: 'rgba(45,122,79,0.42)' },
-    ].forEach(ring => {
-      ctx.beginPath();
-      ctx.arc(cx, cy - 12, ring.r, 0, 2 * Math.PI);
-      ctx.fillStyle = ring.color;
-      ctx.fill();
-    });
-
-    ctx.font      = 'bold ' + Math.round(size * 0.048) + 'px Nova Round, sans-serif';
-    ctx.fillStyle = isDark ? '#e8f5ee' : '#0d2b1a';
-    ctx.textAlign = 'center';
-    ctx.fillText('Breathe In. Breathe Out.', cx, cy - 4);
-
-    ctx.font      = Math.round(size * 0.034) + 'px Nova Mono, monospace';
-    ctx.fillStyle = isDark ? '#8aab8a' : '#4a6e57';
-    ctx.fillText('Focus on the present moment', cx, cy + Math.round(size * 0.058));
-  }
-
 /* ── BMR Calculator – Nutrition Page ── */
 const calcBtn = document.getElementById('calcBtn');
 if (calcBtn) {
