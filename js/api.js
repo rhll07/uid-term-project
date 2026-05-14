@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     while (index === lastIndex);
     lastIndex = index;
 
-    motivationText.textContent  = '\u201C' + motivations[index] + '\u201D';
+    motivationText.textContent = `“${motivations[index]}”`;
     motivationBox.style.display = 'block';
-    motivationBtn.textContent   = '\u2728 Get Another Motivation';
+    motivationBtn.textContent = '✨ Get Another Motivation';
   });
 
 });
